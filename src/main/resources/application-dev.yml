@@ -1,0 +1,35 @@
+spring:
+  #thymeleaf
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+#    encoding: UTF-8
+    suffix: .html
+    mode: HTML
+    enabled: true
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/community?useSSL=false
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      minimum-idle: 5
+      idle-timeout: 30000
+#日志配置
+#为了更加贴近企业开发,我们需要使用单独的配置文件来指定打印级别
+#logging:
+#  level:
+#    com:
+#      changzhu:
+#        community: debug
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.changzhu.community.entity
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
