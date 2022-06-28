@@ -8,6 +8,9 @@ spring:
     suffix: .html
     mode: HTML
     enabled: true
+    encoding:
+    servlet:
+      content-type:
   #数据源配置
   datasource:
     url: jdbc:mysql://localhost:3306/community?useSSL=false
@@ -19,6 +22,24 @@ spring:
       maximum-pool-size: 15
       minimum-idle: 5
       idle-timeout: 30000
+    data-username:
+  jta:
+    atomikos:
+      properties:
+        enable-logging:
+
+
+  mail:
+    host: smtp.sina.com
+    port: 465
+    username: jungle8884@sina.com
+    password: 520310743ff6028f
+    protocol: smtps
+    properties:
+      mail:
+        stmp:
+          ssl:
+            enable: true
 #日志配置
 #为了更加贴近企业开发,我们需要使用单独的配置文件来指定打印级别
 #logging:
